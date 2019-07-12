@@ -1,25 +1,40 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import PostPage from './components/PostPage';
+import { BrowserRouter as Router, Route, Link , NavLink} from 'react-router-dom';
+import PrivateRoute from './components/PrivateRoute';
+import Login from './components/Login';
+import Register from './components/Register';
 
 function App() {
   return (
+    
+    
+    <Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <nav>
+        <NavLink to='/postpage'>
+
+        Homepage
+        </NavLink>
+
+<NavLink to=  '/protected'>
+Login
+</NavLink>
+<NavLink to =   '/register'>
+  Sign Up
+</NavLink>
+          </nav>
+
+
+
+
+        <Route path = "/register" component = {Register}  />
+          <PrivateRoute  path="/protected" component= {Login} />
+        <Route path="/postpage"   component={PostPage}  />
+      </div>
+    </Router>
   );
 }
 
