@@ -1,12 +1,14 @@
 import axios from 'axios';
 
-export const authenticator = () => {
-  const token = localStorage.getItem('token');
+export const customAuth = () => {
+  const token = localStorage.getItem('login_token');
 
   return axios.create({
     headers: {
-      authorization: token
+
+      'Content-Type': 'application/json',
+      Authorization: `${token}`
     },
-    baseURL: 'http://localhost:8000/api'
+    baseURL: ''
   });
 };

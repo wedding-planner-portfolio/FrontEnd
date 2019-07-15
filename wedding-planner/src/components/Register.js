@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
+import {register} from '../actions';
 
 export class Register extends Component {
 state = {
@@ -6,7 +8,8 @@ credentials:{
         firstName:'',
         lastName: '',
         email: '',
-        location:''
+        password:'',
+        phone:''
 
 
 
@@ -26,11 +29,11 @@ handleChange = e => {
     });
   };
 
-  login = e => {
+  register = e => {
     e.preventDefault();
-    this.props.login(this.state.credentials).then(res => {
+    this.props.register(this.state.credentials).then(res => {
       if (res) {
-        this.props.history.push('/protected');
+        this.props.history.push('/login');
       }
     });
   };
@@ -67,21 +70,39 @@ handleChange = e => {
     onChange={this.handleChange}
   />
   <input
+    type="password"
+    name="password"
+    placeholder="password"
+    value={this.state.credentials.password}
+    onChange={this.handleChange}
+  />
+  <input
     type="text"
-    name="location"
-    placeholder="Location"
-    value={this.state.credentials.location}
+    name="phone"
+    placeholder= "phone number"
+    value={this.state.credentials.phone}
     onChange={this.handleChange}
   />
   <button style = {{backgroundColor: 'red', borderRadius: '2%', margin: '2%' , color:'white' }}>
    Sign Up
   </button>
 
-</form> */}
+</form> 
 </div>  
     
         )
     }
 }
 
-export default Register
+
+
+const mapStateToProps = state => ({
+  error: state.error,
+  register: state.register
+});
+
+
+export default connect(
+  mapStateToProps,
+  { register }
+)(Register);
