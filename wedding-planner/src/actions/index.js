@@ -14,10 +14,15 @@ export const login = creds => dispatch => {
     .post('https://wedding-planner-build-week.herokuapp.com/auth/login', creds)
     .then(res => {
       console.log(res.data);
+      if(res.data.authToken){
       localStorage.setItem('token', res.data.authToken);
-      dispatch({ type: LOGIN_SUCCESS, payload: res.data });
+        dispatch({ type: LOGIN_SUCCESS, payload: res.data });
+      }
     })
-    .catch(err => console.log(err.response));
+    .catch(err => {
+      console.log(err);
+      dispatch({ type: LOGIN_FAILURE })
+    })
 };
 
 export const FETCH_DATA_START = 'FETCH_DATA_START';
@@ -26,7 +31,7 @@ export const FETCH_DATA_FAILURE = 'FETCH_DATA_FAILURE';
 export const getData = () => dispatch => {
   dispatch({ type: FETCH_DATA_START });
   customAuth()
-    .get("http://localhost:8000/api/services")
+    .get("https://wedding-planner-build-week.herokuapp.com/api/post")
     .then(res => { 
         console.log("actions log :", res.data)
  dispatch({ type: FETCH_DATA_SUCCESS, payload: res.data});
@@ -44,10 +49,10 @@ export const FETCH_SERVICE_FAILURE = 'FETCH_SERVICE_FAILURE';
 export const getService = (service) => dispatch => {
     dispatch({ type: FETCH_SERVICE_START });
     customAuth()
-        .post("http://localhost:8000/api/services", service)
+        .post("https://wedding-planner-build-week.herokuapp.com/api/post", service)
 
         .then(res => { 
-            console.log("actions log for adding a friend :", res.data)
+            console.log("actions log for adding a service :", res.data)
      dispatch({ type: FETCH_SERVICE_SUCCESS, payload: res.data});
         })
         .catch(err => {
@@ -64,7 +69,7 @@ export const deleteService = (id) => dispatch => {
   
     dispatch({ type: DELETE_SERVICE_START });
     customAuth()
-        .delete(`http://localhost:8000/api/services/${id}`)
+        .delete(`https://wedding-planner-build-week.herokuapp.com/api/post`, id)
         .then(res => { 
             console.log("actions log :",res.data)
             

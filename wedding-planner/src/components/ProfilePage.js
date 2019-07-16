@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import HomePage from './HomePage';
 import {getData, deleteService} from '../actions';
 import { connect } from 'react-redux';
-import SearchBar from './SearchBar';
+// import SearchBar from './SearchBar';
 
 // const services = [
 //   {
@@ -39,36 +39,33 @@ import SearchBar from './SearchBar';
 
 
 
-export class PostPage extends Component {
 
-
-  componentDidMount() {
-    this.props.getData()
-  }
+export class ProfilePage extends Component {
 
 
 
+componentDidMount(){
+this.props.getData()
+
+}
 
     render() {
         return (
             <div>
-              <SearchBar/>
                {this.props.services.map(service => {
           return (
             <div
               style={{
-                
-                marginLeft:'30%',
-                borderTop: "solid 4px red ",
+                borderTop: "solid 4px pink ",
                 borderBottom: "solid 4px purple ",
                 marginTop: "20%",
                 maxWidth: "7000px",
                 width: "auto",
-                height: "600px",
+                height: "500px",
                  backgroundRepeat: "noRepeat",
                 backgroundSize: "cover",
-                backgroundColor: "orange",
-                opacity: ".5",
+                backgroundColor: "teal",
+                opacity: ".7",
                 scrollBehavior: "smooth"
               }}
             >
@@ -77,9 +74,9 @@ export class PostPage extends Component {
               
                
 
-              {/* <button onClick={() => this.deleteService(service.id)}>
+              <button onClick={() => this.props.deleteService(service.id)}>
                 Delete
-              </button> */}
+              </button>
               </div>
           );
         })} 
@@ -99,4 +96,4 @@ const mapStateToProps = state => ({
     { getData, deleteService }
 
 
-  )(PostPage)
+  )(ProfilePage)

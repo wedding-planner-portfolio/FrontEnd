@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import PostPage from './components/PostPage';
-import { BrowserRouter as Router, Route, Link , NavLink} from 'react-router-dom';
+import { BrowserRouter as Router, Route , NavLink} from 'react-router-dom';
 import PrivateRoute from './components/PrivateRoute';
 import Login from './components/Login';
 import Register from './components/Register';
@@ -31,9 +31,12 @@ Login
 </NavLink>
           </nav>
 </div>
+<section style = {{}}>
+<h1 style ={{fontSize:'60px' , color:'white', fontFamily:'cursive', opacity:'.5'}}>Wedding PlannerGram</h1>
+<p style ={{fontSize:'30px' , color:'white', fontFamily:'cursive', opacity:'.5', width:'400px', height:'400px', marginLeft:'30%'}}>Let us help you plan your wedding and make that special day stress free in order to create happy lasting memories with your significant other</p>
           <Route exact path = "/register" component = {Register}  />
             <Route exact path = '/login' component = {Login} />
-
+</section>
         
           <PrivateRoute exact path="/protected" component= {CreatePostsPageForm} />
        

@@ -1,6 +1,25 @@
 import React, { Component } from "react";
 
 export class SearchBar extends Component {
+
+state = {
+search:''
+
+
+}
+  onSearchChange = event => {
+    
+    
+    this.setState({ search:{
+      ...this.state.search,
+      [event.target.name]:event.target.value
+      }
+    
+    })
+    
+  }
+    
+
   render() {
     return (
       <div className="container">

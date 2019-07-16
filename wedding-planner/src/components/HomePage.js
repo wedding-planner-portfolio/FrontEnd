@@ -11,7 +11,7 @@ export class HomePage extends Component {
            <section>
              <img
              style={{width:'300px', height:'300px'  }}
-        src= {this.props.service.imgUrl}
+        src= {this.props.service.imageURL}
         alt={this.props.service.name}
         
         />
@@ -26,7 +26,10 @@ export class HomePage extends Component {
      {this.props.service.location}
            </section>
         
-                
+                <section>
+
+                 {this.props.service.vendors}   
+                </section>
             </div>
         )
     }

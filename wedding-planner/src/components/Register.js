@@ -32,10 +32,9 @@ handleChange = e => {
   register = e => {
     e.preventDefault();
     this.props.register(this.state.credentials).then(res => {
-      if (res) {
         this.props.history.push('/login');
       }
-    });
+    );
   };
 
 
@@ -44,11 +43,12 @@ handleChange = e => {
     render() {
         return (
     
-              <div style={{marginTop:'20%'}}  >
+              <div style={{marginTop:'15%'}}  >
 
-<h1 style={{color:'white', marginRight:'5%'}}  >Login</h1>
+<h1 style={{color:'white', marginLeft:'30%'}}  >Register</h1>
 <form  onSubmit={this.login}>  
   <input
+  style = {{ borderRadius:'4%', width:'400px', height:'53px', textIndent: '30px', marginLeft:'40%', border:'grey solid 2px', backgroundColor:'darkGrey', color:'white'}}
     type="text"
     name="firstName"
     placeholder="First Name"
@@ -56,6 +56,7 @@ handleChange = e => {
     onChange={this.handleChange}
   />
   <input
+  style = {{ borderRadius:'4%', width:'400px', height:'53px', textIndent: '30px', marginLeft:'40%', border:'grey solid 2px', backgroundColor:'darkGrey', color:'white'}}
     type="text"
     name="lastName"
     placeholder="Last Name"
@@ -63,6 +64,7 @@ handleChange = e => {
     onChange={this.handleChange}
   />
   <input
+  style = {{ borderRadius:'4%', width:'400px', height:'53px', textIndent: '30px', marginLeft:'40%', border:'grey solid 2px', backgroundColor:'darkGrey', color:'white'}}
     type="text"
     name="email"
     placeholder="Email"
@@ -70,6 +72,7 @@ handleChange = e => {
     onChange={this.handleChange}
   />
   <input
+  style = {{ borderRadius:'4%', width:'400px', height:'53px', textIndent: '30px', marginLeft:'40%', border:'grey solid 2px', backgroundColor:'darkGrey', color:'white'}}
     type="password"
     name="password"
     placeholder="password"
@@ -77,6 +80,7 @@ handleChange = e => {
     onChange={this.handleChange}
   />
   <input
+  style = {{ borderRadius:'4%', width:'400px', height:'53px', textIndent: '30px', marginLeft:'40%', border:'grey solid 2px', backgroundColor:'darkGrey', color:'white'}}
     type="text"
     name="phone"
     placeholder= "phone number"
