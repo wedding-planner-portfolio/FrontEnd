@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const customAuth = () => {
-  const token = localStorage.getItem('login_token');
+  const token = localStorage.getItem('token');
 
   return axios.create({
     headers: {

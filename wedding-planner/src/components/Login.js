@@ -7,10 +7,6 @@ import { login } from '../actions';
 import { withRouter } from 'react-router-dom';
 // import styled from 'styled-components'
 
-
-
-
-
 class Login extends React.Component {
   state = {
     credentials: {
@@ -29,10 +25,7 @@ class Login extends React.Component {
     });
   };
 
-  
-
-
- login = e => {
+  login = e => {
     e.preventDefault();
     this.props.login(this.state.credentials).then(res => {
       this.props.history.push('/protected');

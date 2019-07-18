@@ -8,20 +8,16 @@ class AddServiceForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-     
       savingService: false,
       deleteService: false,
-post:{
-  features: '',
-  userId: 1 ,
-  pricing:'',
-  theme:'',
-  imageURL: '',
-  location: '',
-  description: '',
-  vendors:'',
-  
-}
+      features: '',
+      userId: 1 ,
+      pricing:'',
+      theme:'',
+      imageURL: '',
+      location: '',
+      description: '',
+      vendors:'',
     };
 
   }
@@ -29,11 +25,19 @@ post:{
 
 
 addService = e => {
-  console.log("log from create post page",this.state.post)
+  console.log("log from create post page")
   e.preventDefault();
-const service = this.state.post;
-this.props.getService(service);
-
+  const service = {
+    userId: this.state.userId,
+    imageURL: this.state.imageURL,
+    description: this.state.description,
+    location: this.state.location,
+    theme: this.state.theme,
+    pricing: this.state.pricing,
+    features: this.state.features,
+    vendors: this.state.vendors,
+  };
+  this.props.getService(service);
 }
 
   handleInputChange = e => {
