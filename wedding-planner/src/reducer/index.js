@@ -18,6 +18,10 @@ import {
   DELETE_SERVICE_START,
   DELETE_SERVICE_SUCCESS,
   DELETE_SERVICE_FAILURE,
+
+  UPDATE_POST_START,
+  UPDATE_POST_SUCCESS,
+  UPDATE_POST_FAILURE
 }
 from '../actions';
 
@@ -133,9 +137,30 @@ const reducer = (state = initialState, action) => {
         deleteService: false,
         error: action.payload
       };
-
-    default:
-      return state;
+    case UPDATE_POST_START:
+      return {
+        ...state,
+        updatingService: true,
+        update: true,
+        error:''
+      };
+   case UPDATE_POST_SUCCESS:
+      return {
+        ...state,
+        services: action.payload,
+        update: false,
+        updatingService: false,
+        error:''
+      };
+      case UPDATE_POST_FAILURE:
+      return {
+        ...state,
+        update: false,
+        updatingService: false,
+        error: action.payload
+      };
+      default:
+        return state;
     }
   };
             

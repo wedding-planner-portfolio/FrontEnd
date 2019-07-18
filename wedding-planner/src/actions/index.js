@@ -1,5 +1,6 @@
 import { customAuth } from '../utils/authenticator';
-
+import axios from 'axios';
+// import { publicDecrypt } from 'crypto';
 export const LOGIN_START = 'LOGIN_START';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAILURE = 'LOGIN_FAILURE';
@@ -33,7 +34,7 @@ export const getData = () => dispatch => {
     })
     .catch(err => {
       console.log(err.response);
-      dispatch({ type: FETCH_DATA_FAILURE, payload: err.response.data.error });
+      dispatch({ type: FETCH_DATA_FAILURE, payload: err });
     });
 };
 
@@ -67,7 +68,7 @@ export const deleteService = (id) => dispatch => {
     .delete(`https://wedding-planner-build-week.herokuapp.com/api/post/${id}`)
     .then(res => { 
       console.log("actions log :",res.data)
-      dispatch({ type: DELETE_SERVICE_SUCCESS });
+      dispatch({ type: DELETE_SERVICE_SUCCESS, payload: res.data });
     })
     .catch(err => {
       console.log(err);
@@ -89,3 +90,25 @@ export const register = creds => dispatch => {
     })
     .catch(err => console.log(err.response));
 };
+
+export const UPDATE_POST_START = 'UPDATE_POST_START';
+export const UPDATE_POST_SUCCESS = 'UPDATE_POST_SUCCESS';
+export const UPDATE_POST_FAILURE = 'UPDATE_POST_FAILURE';
+export const  update = updatedPost=> dispatch => {
+  console.log("actions log from post action",updatedPost);
+dispatch({type: UPDATE_POST_START });
+return customAuth()
+.put(`https://wedding-planner-build-week.herokuapp.com/api/post/${updatedPost.id}`, updatedPost)
+.then(res => {
+  dispatch({type:UPDATE_POST_SUCCESS, payload: res.data});
+  return true;
+})
+.catch(err => console.log(err));
+};
+
+
+
+
+
+
+

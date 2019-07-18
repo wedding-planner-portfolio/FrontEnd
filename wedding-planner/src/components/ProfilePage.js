@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import HomePage from './HomePage';
-import {getData, deleteService} from '../actions';
+import {getData, deleteService, update} from '../actions';
 import { connect } from 'react-redux';
 // import SearchBar from './SearchBar';
 
 export class ProfilePage extends Component {
+
+  
 
   componentDidMount() {
     this.props.getData()
@@ -31,16 +33,14 @@ export class ProfilePage extends Component {
                   scrollBehavior: "smooth"
                 }}
               >
-                <HomePage key={service.id} service={service} />
-                <button onClick={() => this.props.deleteService(service.id)}>
-                  Delete
-                </button>
+                <HomePage key={service.id} service={service} deleteService={this.props.deleteService} update={this.props.update} />
               </div>
             );
         })} 
       </div>
     )
   }
+  
 }
 
 const mapStateToProps = state => ({
@@ -51,7 +51,7 @@ const mapStateToProps = state => ({
   
   export default connect(
     mapStateToProps,
-    { getData, deleteService }
+    { getData, deleteService, update }
 
 
   )(ProfilePage)
