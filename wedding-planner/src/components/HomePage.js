@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 // import { getService } from '../actions';
 import { deleteService } from '../actions';
 import { update} from '../actions';
-import axios from 'axios';
+// import axios from 'axios';
 
 
 
@@ -99,7 +99,7 @@ return(
 <div style ={{color:'red', fontSize: '30px',}} >
 
 <section>
-<strong>Name:</strong> {this.props.service.firstName}{this.props.service.lastName}
+<strong>Wedding Planner:</strong> {this.props.service.firstName}{this.props.service.lastName}
 </section>
 <section>
  <img
@@ -116,15 +116,15 @@ alt={this.props.service.firstName}
 <strong>Theme:</strong> {this.props.service.theme}
 </section>
 <section>
-{this.props.service.description}
+<strong>Description:</strong> {this.props.service.description}
 </section>
 <section>
-{this.props.service.location}
+<strong>Location:</strong>{this.props.service.location}
 </section>
 
     <section>
 
-     {this.props.service.vendors}   
+    <strong>Vendors:</strong> {this.props.service.vendors}   
     </section>
 
     <button onClick={() => this.props.deleteService(this.props.service.id)}>

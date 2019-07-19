@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import {register} from '../actions';
 
 export class Register extends Component {
@@ -46,7 +47,7 @@ handleChange = e => {
               <div style={{marginTop:'15%'}}  >
 
 <h1 style={{color:'white', marginLeft:'30%'}}  >Register</h1>
-<form  onSubmit={this.login}>  
+<form  onSubmit={this.register}>  
   <input
   style = {{ borderRadius:'4%', width:'400px', height:'53px', textIndent: '30px', marginLeft:'40%', border:'grey solid 2px', backgroundColor:'darkGrey', color:'white'}}
     type="text"
@@ -87,7 +88,7 @@ handleChange = e => {
     value={this.state.credentials.phone}
     onChange={this.handleChange}
   />
-  <button style = {{backgroundColor: 'red', borderRadius: '2%', margin: '2%' , color:'white' }}>
+  <button onClick={(e)=> this.register(e)} style = {{backgroundColor: 'red', borderRadius: '2%', margin: '2%' , color:'white' }}>
    Sign Up
   </button>
 
@@ -98,7 +99,7 @@ handleChange = e => {
     }
 }
 
-
+const RegisterRouter = withRouter(Register);
 
 const mapStateToProps = state => ({
   error: state.error,
@@ -109,4 +110,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { register }
-)(Register);
+)(RegisterRouter);

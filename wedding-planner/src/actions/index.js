@@ -1,5 +1,5 @@
 import { customAuth } from '../utils/authenticator';
-import axios from 'axios';
+// import axios from 'axios';
 // import { publicDecrypt } from 'crypto';
 export const LOGIN_START = 'LOGIN_START';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
@@ -80,16 +80,35 @@ export const REGISTER_START = 'REGISTER_START';
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
 export const REGISTER_FAILURE = 'REGISTER_FAILURE';
 export const register = creds => dispatch => {
+  console.log("creds from action log", creds )
   dispatch({ type: REGISTER_START });
   return customAuth()
     .post('https://wedding-planner-build-week.herokuapp.com/auth/register', creds)
     .then(res => {
-      localStorage.setItem('token', res.data.payload);
-      dispatch({ type: REGISTER_SUCCESS });
-      return true;
-    })
-    .catch(err => console.log(err.response));
-};
+      // if(res.data.authToken){
+        // localStorage.setItem('token', res.data.authToken);
+console.log("register action",res)
+     dispatch({ type: REGISTER_SUCCESS });
+        // }
+      })
+      .catch(err => {
+        console.log(err);
+        dispatch({ type: REGISTER_FAILURE})
+      })
+      .catch(err => console.log(err.response));
+  };
+
+
+
+
+
+//       if(creds){
+//       localStorage.setItem('token', res.data.payload)};
+//       dispatch({ type: REGISTER_SUCCESS, payload:res.data.authToken});
+//       return true;
+//     })
+//     .catch(err => console.log(err.response));
+// };
 
 export const UPDATE_POST_START = 'UPDATE_POST_START';
 export const UPDATE_POST_SUCCESS = 'UPDATE_POST_SUCCESS';

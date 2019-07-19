@@ -69,7 +69,8 @@ const reducer = (state = initialState, action) => {
         ...state,
         register: false,
         error: '',
-        success: ''
+      
+    
       };
     case REGISTER_FAILURE:
       return {

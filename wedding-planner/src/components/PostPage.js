@@ -40,7 +40,11 @@ import SearchBar from './SearchBar';
 
 
 export class PostPage extends Component {
+state = {
 
+search:''
+
+}
 
   componentDidMount() {
     this.props.getData()
@@ -50,8 +54,21 @@ export class PostPage extends Component {
 
 
     render() {
+
+      const filteredPosts = this.props.user.filter(post => {
+
+        return post.userName.includes(this.state.search);
+    
+    
+     });
+     
+
+
         return (
             <div>
+
+
+
               <SearchBar/>
                {this.props.services.map(service => {
           return (
@@ -72,7 +89,7 @@ export class PostPage extends Component {
                 scrollBehavior: "smooth"
               }}
             >
-              <HomePage key={service.id} service={service} />
+              <HomePage key={service.id} service={service}/>
 
               
                
