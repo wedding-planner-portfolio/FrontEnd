@@ -38,45 +38,44 @@ export class Register extends Component {
   render() {
     return (
       <div className="container">
-        <h1>Register</h1>
-        <form onSubmit={this.register} className="d-flex flex-column">  
-          <input
-            type="text"
-            name="firstName"
-            placeholder="First Name"
-            value={this.state.credentials.firstName}
-            onChange={this.handleChange}
-          />
-          <input
-            type="text"
-            name="lastName"
-            placeholder="Last Name"
-            value={this.state.credentials.lastName}
-            onChange={this.handleChange}
-          />
-          <input
-            type="text"
-            name="email"
-            placeholder="Email"
-            value={this.state.credentials.email}
-            onChange={this.handleChange}
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="password"
-            value={this.state.credentials.password}
-            onChange={this.handleChange}
-          />
-          <input
-            type="text"
-            name="phone"
-            placeholder= "phone number"
-            value={this.state.credentials.phone}
-            onChange={this.handleChange}
-          />
-          <button onClick={(e)=> this.register(e)} className="btn btn-primary">Sign Up</button>
-        </form> 
+        <div className="row d-flex justify-content-center">
+          <div className="col-lg-4">
+            <h1>Register</h1>
+            <form onSubmit={this.register} className="d-flex flex-column">  
+              <input
+                type="text" name="firstName" placeholder="First Name"
+                value={this.state.credentials.firstName}
+                onChange={this.handleChange}
+                className="wp-input"
+              />
+              <input
+                type="text" name="lastName" placeholder="Last Name"
+                value={this.state.credentials.lastName}
+                onChange={this.handleChange}
+                className="wp-input"
+              />
+              <input
+                type="text" name="email" placeholder="Email"
+                value={this.state.credentials.email}
+                onChange={this.handleChange}
+                className="wp-input"
+              />
+              <input
+                type="password" name="password" placeholder="Password"
+                value={this.state.credentials.password}
+                onChange={this.handleChange}
+                className="wp-input"
+              />
+              <input
+                type="text" name="phone" placeholder= "Phone Number"
+                value={this.state.credentials.phone}
+                onChange={this.handleChange}
+                className="wp-input"
+              />
+              <button onClick={(e)=> this.register(e)} className="btn btn-primary">Sign Up</button>
+            </form> 
+          </div>
+        </div>
       </div>
     )
   }

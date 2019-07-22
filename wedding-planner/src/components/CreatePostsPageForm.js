@@ -41,52 +41,52 @@ class AddServiceForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container container-fluid">
         <form onSubmit={this.addService}>
           <input
             onChange={this.handleInputChange}
-            placeholder="features"
-            value={this.state.features}
-            name="features"
-          />
-          <input
-            onChange={this.handleInputChange}
-            placeholder="price"
-            value={this.state.pricing}
-            name="pricing"
-          />
-          <input
-            onChange={this.handleInputChange}
-            placeholder="theme"
+            placeholder="Theme"
             value={this.state.theme}
             name="theme"
           />
           <input
+            onChange={this.handleInputChange}
+            placeholder="Price"
+            value={this.state.pricing}
+            name="pricing"
+          />
+          <input
             type="text"
             onChange={this.handleInputChange}
-            placeholder="image Url"
+            placeholder="Image"
             value={this.state.imgURL}
             name="imageURL"
           />
           <input
             onChange={this.handleInputChange}
-            placeholder="location"
+            placeholder="Location"
             value={this.state.location}
             name="location"
           />
           <input
             onChange={this.handleInputChange}
-            placeholder="description"
+            placeholder="Description"
             value={this.state.description}
             name="description"
           />
           <input
             onChange={this.handleInputChange}
-            placeholder="vendors"
+            placeholder="Features"
+            value={this.state.features}
+            name="features"
+          />
+          <input
+            onChange={this.handleInputChange}
+            placeholder="Vendors"
             value={this.state.vendors}
             name="vendors"
           />
-          <button onClick={e => this.addService(e)}>Add Service</button>
+          <button onClick={e => this.addService(e)} className="btn btn-primary">Add Wedding Post</button>
         </form>
 
         <ProfilePage />

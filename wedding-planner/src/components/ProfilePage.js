@@ -12,14 +12,16 @@ export class ProfilePage extends Component {
   render() {
     console.log("This is where props is", this.props.services);
     return (
-      <div>
+      <div className="container">
+        <div className="card-group">
           {this.props.services.map(service => {
             return (
               <div>
                 <HomePage key={service.id} service={service} deleteService={this.props.deleteService} update={this.props.update} />
               </div>
             );
-        })} 
+          })} 
+        </div>
       </div>
     )
   }

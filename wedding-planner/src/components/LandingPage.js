@@ -13,7 +13,7 @@ export default function LandingPage() {
             </p>
             <div className="row mt-3 mb-3">
                 <div className="col-lg-6 d-flex justify-content-center"> 
-                  <NavLink exact to='/login' className="btn btn-primary p-4 m-1 wp-btn-explore text-white">Login</NavLink>
+                  <NavLink exact to='/postpage' className="btn btn-primary p-4 m-1 wp-btn-explore text-white">Explore Ideas</NavLink>
                 </div>
                 <div className="col-lg-6 d-flex justify-content-center">
                   <NavLink to='/register' className="btn btn-secondary p-4 m-1 wp-btn-login text-white">Register</NavLink>
@@ -22,39 +22,39 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="aboutus" class="section pt-3 pb-5 mt-5">
-            <div class="container mt-5 pb-5">
-              <div class="about-title text-center mb-3">ABOUT US</div>
-              <div class="card-group">
-                <div class="card">
-                  <img src="https://github.com/wedding-planner-portfolio/ui/blob/master/img/morgan.png?raw=true" class="about-img" />
-                  <div class="card-body">
-                    <h5 class="card-title">Morgan Peterson</h5>
-                    <p class="card-subtitle">Front End</p>
+        <section id="aboutus" className="section pt-3 pb-5 mt-5">
+            <div className="container mt-5 pb-5">
+              <div className="about-title text-center mb-3">ABOUT US</div>
+              <div className="card-group">
+                <div className="card">
+                  <img src="https://github.com/wedding-planner-portfolio/ui/blob/master/img/morgan.png?raw=true" alt ="" className="about-img" />
+                  <div className="card-body">
+                    <h5 className="card-title">Morgan Peterson</h5>
+                    <p className="card-subtitle">Front End</p>
                   </div>
                 </div>
 
-                <div class="card">
-                  <img src="https://github.com/wedding-planner-portfolio/ui/blob/master/img/alan.png?raw=true" class="about-img" />
-                  <div class="card-body">
-                    <h5 class="card-title">Alan Lemasney</h5>
-                    <p class="card-subtitle">Front End</p>
+                <div className="card">
+                  <img src="https://github.com/wedding-planner-portfolio/ui/blob/master/img/alan.png?raw=true" alt="" className="about-img" />
+                  <div className="card-body">
+                    <h5 className="card-title">Alan Lemasney</h5>
+                    <p className="card-subtitle">Front End</p>
                   </div>
                 </div>
 
-                <div class="card">
-                  <img src="https://github.com/wedding-planner-portfolio/ui/blob/master/img/ronny.png?raw=true" class="about-img" />
-                  <div class="card-body">
-                    <h5 class="card-title">Ronny Alvarado</h5>
-                    <p class="card-subtitle">Back End</p>
+                <div className="card">
+                  <img src="https://github.com/wedding-planner-portfolio/ui/blob/master/img/ronny.png?raw=true" alt="" className="about-img" />
+                  <div className="card-body">
+                    <h5 className="card-title">Ronny Alvarado</h5>
+                    <p className="card-subtitle">Back End</p>
                   </div>
                 </div>
 
-                <div class="card">
-                  <img src="https://github.com/wedding-planner-portfolio/ui/blob/master/img/edgar.png?raw=true" class="about-img" />
-                  <div class="card-body">
-                      <h5 class="card-title">Edgar Flores</h5>
-                      <p class="card-subtitle">Back End</p>
+                <div className="card">
+                  <img src="https://github.com/wedding-planner-portfolio/ui/blob/master/img/edgar.png?raw=true" alt="" className="about-img" />
+                  <div className="card-body">
+                      <h5 className="card-title">Edgar Flores</h5>
+                      <p className="card-subtitle">Back End</p>
                   </div>
                 </div>
               </div>

@@ -19,15 +19,15 @@ export class PostPage extends Component {
     });
     
     return (
-      <div>
+      <div className="container">
         <SearchBar/>
-        {this.props.services.map(service => {
-          return (
-            <div>
+        <div className="card-group">
+          {this.props.services.map(service => {
+            return (
               <HomePage key={service.id} service={service}/>
-            </div>
-          );
-        })} 
+            );
+          })} 
+        </div>
       </div>
     )
   }

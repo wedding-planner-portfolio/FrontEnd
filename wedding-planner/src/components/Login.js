@@ -42,24 +42,30 @@ class Login extends React.Component {
     if (this.state.register === false){
       return (
         <div className="container container-fluid">
-          <h1>Login</h1>
-          <form onSubmit={this.login} className="d-flex flex-column">  
-            <input
-              type="text"
-              name="username"
-              placeholder="username"
-              value={this.state.credentials.username}
-              onChange={this.handleChange}
-            />
-            <input
-              type="password"
-              name="password"
-              placeholder="password"
-              value={this.state.credentials.password}
-              onChange={this.handleChange}
-            />
-            <button onClick={this.login} className="btn btn-primary">Log In</button>
-          </form>
+          <div className="row d-flex justify-content-center">
+            <div className="col-lg-4">
+              <h1>Login</h1>
+              <form onSubmit={this.login} className="d-flex flex-column">  
+                <input
+                  type="text"
+                  name="username"
+                  placeholder="Email Address"
+                  value={this.state.credentials.username}
+                  onChange={this.handleChange}
+                  className="wp-input"
+                />
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  value={this.state.credentials.password}
+                  onChange={this.handleChange}
+                  className="wp-input"
+                />
+                <button onClick={this.login} className="btn btn-primary">Log In</button>
+              </form>
+            </div>
+          </div>
         </div>
       )
     } else {

@@ -50,45 +50,38 @@ export class HomePage extends Component {
     }));
   }
 
-
-
   render(){
     return (
-      <div>
-        {this.state.update ?
-          <form onSubmit={this.updatePost}>
-            <input  onChange={this.handleInputChange}
-                    placeholder="imageURL"
-                    value={this.state.imageURL}
-                    name="imageURL"/>
-            <input  onChange={this.handleInputChange}
-                    placeholder="theme"
-                    value={this.state.theme}
-                    name="theme"/>
-            <input  onChange={this.handleInputChange}
-                    placeholder="description"
-                    value={this.state.description}
-                    name="description"/>
-            <input  onChange={this.handleInputChange}
-                    placeholder="location"
-                    value={this.state.location}
-                    name="location"/>
-            <button type="submit">Finish Editing</button>
-          </form> 
-          : 
-          <div>
-            <strong>Wedding Planner:</strong> {this.props.service.firstName}{this.props.service.lastName}
-            <img className="wp-post-img" src= {this.props.service.imageURL} alt={this.props.service.firstName}/>
-            <strong>Price:</strong> {this.props.service.pricing}
-            <strong>Theme:</strong> {this.props.service.theme}
-            <strong>Description:</strong> {this.props.service.description}
-            <strong>Location:</strong>{this.props.service.location}
-            <strong>Vendors:</strong> {this.props.service.vendors}   
-            <button onClick={() => this.props.deleteService(this.props.service.id)}>Delete</button>
-            <button onClick={(event)=> this.edit(event)}>Edit</button>
-          </div>
-        }
-      </div>
+      <>
+            {this.state.update ?
+              <div className="">
+                <img className="wp-post-img" src={this.props.service.imageURL} alt={this.props.service.firstName}/>
+                <form onSubmit={this.updatePost} className="d-flex flex-column">
+                  <input onChange={this.handleInputChange} placeholder="imageURL" value={this.state.imageURL} name="imageURL"/>
+                  <input onChange={this.handleInputChange} placeholder="theme" value={this.state.theme} name="theme"/>
+                  <input onChange={this.handleInputChange} placeholder="description" value={this.state.description} name="description"/>
+                  <input onChange={this.handleInputChange} placeholder="location" value={this.state.location} name="location"/>
+                  <input onChange={this.handleInputChange} placeholder="vendors" value={this.state.vendors} name="vendors"/>
+                  <button type="submit">Finish Editing</button>
+                </form> 
+              </div>
+              : 
+              <div className="wp-card text-left m-1">
+                <img className="wp-post-img" src={this.props.service.imageURL} alt={this.props.service.firstName}/>
+                <div><strong>Wedding Planner:</strong> {this.props.service.firstName} {this.props.service.lastName}</div>
+                <div><strong>Price:</strong> {this.props.service.pricing}</div>
+                <div><strong>Theme:</strong> {this.props.service.theme}</div>
+                <div><strong>Description:</strong> {this.props.service.description}</div>
+                <div><strong>Location:</strong>{this.props.service.location}</div>
+                <div><strong>Vendors:</strong> {this.props.service.vendors}</div>
+    
+                <div>
+                  <button className="btn btn-secondary" onClick={(event)=> this.edit(event)}>Edit</button>
+                  <button className="btn btn-primary" onClick={() => this.props.deleteService(this.props.service.id)}>Delete</button>
+                </div>
+              </div>
+            }
+      </>
     )
   }
 }
