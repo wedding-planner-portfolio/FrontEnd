@@ -41,67 +41,27 @@ class AddServiceForm extends Component {
 
   render() {
     return (
-      <div style={{ marginTop: "20%" }}>
+      <div>
         <form onSubmit={this.addService}>
           <input
-            style={{
-              borderRadius: "4%",
-              width: "400px",
-              height: "53px",
-              textIndent: "30px",
-              marginLeft: "40%",
-              border: "grey solid 2px",
-              backgroundColor: "darkGrey",
-              color: "white"
-            }}
             onChange={this.handleInputChange}
             placeholder="features"
             value={this.state.features}
             name="features"
           />
           <input
-            style={{
-              borderRadius: "4%",
-              width: "400px",
-              height: "53px",
-              textIndent: "30px",
-              marginLeft: "40%",
-              border: "grey solid 2px",
-              backgroundColor: "darkGrey",
-              color: "white"
-            }}
             onChange={this.handleInputChange}
             placeholder="price"
             value={this.state.pricing}
             name="pricing"
           />
           <input
-            style={{
-              borderRadius: "4%",
-              width: "400px",
-              height: "53px",
-              textIndent: "30px",
-              marginLeft: "40%",
-              border: "grey solid 2px",
-              backgroundColor: "darkGrey",
-              color: "white"
-            }}
             onChange={this.handleInputChange}
             placeholder="theme"
             value={this.state.theme}
             name="theme"
           />
           <input
-            style={{
-              borderRadius: "4%",
-              width: "400px",
-              height: "53px",
-              textIndent: "30px",
-              marginLeft: "40%",
-              border: "grey solid 2px",
-              backgroundColor: "darkGrey",
-              color: "white"
-            }}
             type="text"
             onChange={this.handleInputChange}
             placeholder="image Url"
@@ -109,65 +69,26 @@ class AddServiceForm extends Component {
             name="imageURL"
           />
           <input
-            style={{
-              borderRadius: "4%",
-              width: "400px",
-              height: "53px",
-              textIndent: "30px",
-              marginLeft: "40%",
-              border: "grey solid 2px",
-              backgroundColor: "darkGrey",
-              color: "white"
-            }}
             onChange={this.handleInputChange}
             placeholder="location"
             value={this.state.location}
             name="location"
           />
           <input
-            style={{
-              borderRadius: "4%",
-              width: "400px",
-              height: "53px",
-              textIndent: "30px",
-              marginLeft: "40%",
-              border: "grey solid 2px",
-              backgroundColor: "darkGrey",
-              color: "white"
-            }}
             onChange={this.handleInputChange}
             placeholder="description"
             value={this.state.description}
             name="description"
           />
           <input
-            style={{
-              borderRadius: "4%",
-              width: "400px",
-              height: "53px",
-              textIndent: "30px",
-              marginLeft: "40%",
-              border: "grey solid 2px",
-              backgroundColor: "darkGrey",
-              color: "white"
-            }}
             onChange={this.handleInputChange}
             placeholder="vendors"
             value={this.state.vendors}
             name="vendors"
           />
-          <button
-            style={{
-              backgroundColor: "red",
-              borderRadius: "2%",
-              margin: "2%",
-              color: "white"
-            }}
-            onClick={e => this.addService(e)}
-          >
-            Add Service
-          </button>
+          <button onClick={e => this.addService(e)}>Add Service</button>
         </form>
+
         <ProfilePage />
       </div>
     );
