@@ -41,34 +41,36 @@ class Login extends React.Component {
     
     if (this.state.register === false){
       return (
-        <div style={{marginTop:'10%'}}  >
-          <h1 style={{color:'red', marginLeft:'30%', fontFamily:'Courgie'}}  >Login</h1>
-          <form  onSubmit={this.login}>  
-            <input
-            style = {{ borderRadius:'4%', width:'400px', height:'53px', textIndent: '30px', marginLeft:'30%', marginBottom:'2%', border:'grey solid 2px', backgroundColor:'darkGrey', color:'white'}}
-              type="text"
-              name="username"
-              placeholder="username"
-              value={this.state.credentials.username}
-              onChange={this.handleChange}
-            />
-            <input
-              style = {{ borderRadius:'4%', width:'400px', height:'53px', textIndent: '30px', marginLeft:'50%',marginRight:'50%', border:'grey solid 2px', backgroundColor:'darkGrey', color:'white'}}
-              type="password"
-              name="password"
-              placeholder="password"
-              value={this.state.credentials.password}
-              onChange={this.handleChange}
-            />
-            <button style = {{backgroundColor: 'red', borderRadius: '2%', justifyContent:'center', alignItems:'center', margin: '2%' , color:'white' }} onClick={this.login}>Log In</button>
-          </form>
+        <div className="container container-fluid">
+          <div className="row d-flex justify-content-center">
+            <div className="col-lg-4 m-3">
+              <h1 className="wp-heading2">Login</h1>
+              <form onSubmit={this.login} className="d-flex flex-column">  
+                <input
+                  type="text"
+                  name="username"
+                  placeholder="Email Address"
+                  value={this.state.credentials.username}
+                  onChange={this.handleChange}
+                  className="wp-input"
+                />
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  value={this.state.credentials.password}
+                  onChange={this.handleChange}
+                  className="wp-input"
+                />
+                <button onClick={this.login} className="btn btn-primary">Log In</button>
+              </form>
+            </div>
+          </div>
         </div>
       )
     } else {
     return (
-      <div style={{marginTop:'20%'}}  >
         <Register /> 
-      </div>
       )
     }
   }
