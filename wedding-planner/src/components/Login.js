@@ -43,8 +43,8 @@ class Login extends React.Component {
       return (
         <div className="container container-fluid">
           <div className="row d-flex justify-content-center">
-            <div className="col-lg-4">
-              <h1>Login</h1>
+            <div className="col-lg-4 m-3">
+              <h1 className="wp-heading2">Login</h1>
               <form onSubmit={this.login} className="d-flex flex-column">  
                 <input
                   type="text"

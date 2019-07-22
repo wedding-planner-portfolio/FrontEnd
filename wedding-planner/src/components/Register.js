@@ -39,8 +39,8 @@ export class Register extends Component {
     return (
       <div className="container">
         <div className="row d-flex justify-content-center">
-          <div className="col-lg-4">
-            <h1>Register</h1>
+          <div className="col-lg-4 m-3">
+            <h1 className="wp-heading2">Register</h1>
             <form onSubmit={this.register} className="d-flex flex-column">  
               <input
                 type="text" name="firstName" placeholder="First Name"

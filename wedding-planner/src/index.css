@@ -140,6 +140,7 @@ h1 a:hover {
 .wp-input{
   width: 330px;
   height: 50px;
+  margin: 4px;
 }
 
 .wp-card {
@@ -147,4 +148,12 @@ h1 a:hover {
   flex-direction: column;
   width: 270px;
   font-size: 12px;
+}
+
+.wp-create-input {
+  margin: 3px;
+}
+
+.wp-heading2 {
+  font-family: 'Work Sans', sans-serif;
 }

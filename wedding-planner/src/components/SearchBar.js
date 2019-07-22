@@ -18,7 +18,7 @@ export class SearchBar extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-10 mx-auto text center">
+          <div className="p-3">
             <div className="searchBar">
               {/* <div>
                 <img className="camera" src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Instagram_font_awesome.svg" alt="camera" />

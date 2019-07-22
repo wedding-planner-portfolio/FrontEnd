@@ -62,7 +62,7 @@ export class HomePage extends Component {
                   <input onChange={this.handleInputChange} placeholder="description" value={this.state.description} name="description"/>
                   <input onChange={this.handleInputChange} placeholder="location" value={this.state.location} name="location"/>
                   <input onChange={this.handleInputChange} placeholder="vendors" value={this.state.vendors} name="vendors"/>
-                  <button type="submit">Finish Editing</button>
+                  <button type="submit" className="btn btn-secondary">Finish Editing</button>
                 </form> 
               </div>
               : 
@@ -72,12 +72,12 @@ export class HomePage extends Component {
                 <div><strong>Price:</strong> {this.props.service.pricing}</div>
                 <div><strong>Theme:</strong> {this.props.service.theme}</div>
                 <div><strong>Description:</strong> {this.props.service.description}</div>
-                <div><strong>Location:</strong>{this.props.service.location}</div>
+                <div><strong>Location:</strong> {this.props.service.location}</div>
                 <div><strong>Vendors:</strong> {this.props.service.vendors}</div>
     
                 <div>
                   <button className="btn btn-secondary" onClick={(event)=> this.edit(event)}>Edit</button>
-                  <button className="btn btn-primary" onClick={() => this.props.deleteService(this.props.service.id)}>Delete</button>
+                  <button className="btn btn-danger" onClick={() => this.props.deleteService(this.props.service.id)}>Delete</button>
                 </div>
               </div>
             }
